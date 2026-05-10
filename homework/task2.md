@@ -29,6 +29,7 @@ def layernorm_forward_torch(x: torch.Tensor, weight: torch.Tensor, bias: torch.T
 ```
 
 *Подсказка:* Пусть дана матрица `[M; N]`, где M - количество элементов, а N - hidden size; в гриде вы будете запускаться по оси `M`, имея доступ ко всем `N` в рамках выбранных (или выбранного) `M`, - это знание упростит подсчёт статистики.
+
 *Подсказка:* Для аккумуляции градиентов в backward pass вам может понадобиться функция `tl.atomic_add`: [документация](https://triton-lang.org/main/python-api/generated/triton.language.atomic_add.html).
 
 
